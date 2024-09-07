@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCK-PAPER-SCISSORS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="content">
+    <h1>ROCK-PAPER-SCISSORS</h1>
+    <div id="section">
+        <div onclick="play('Rock')">✊</div>
+        <div onclick="play('Paper')">✋</div>
+        <div onclick="play('Scissor')">✌</div>
+    </div>
+    <p id="player">PLAYER CHOICE:</p>
+    <p id="com">COMPUTER CHOICE:</p>
+    <h2 id="result"></h2>
+    <p id="player_win">PLAYER: <span id="one">0</span></p>
+    <p id="comp_win">COMPUTER: <span id="two">0</span></p>
+    </div>
+    <script>
+        const computer = document.getElementById("com");
+const result = document.getElementById('result');
+const player = document.getElementById('player');
+let WIN = 0;
+let LOSE = 0;
+let choices = ['Rock','Paper','Scissor']
+function play(choice){
+    const comp  = choices[Math.floor(Math.random()*3)];
+if(choice === comp){
+    result.textContent = "TIE"
+    result.style.color = "blue";
+}
+else if(choice =='Rock' && comp == 'Scissor'){
+    result.textContent = "YOU WIN!"
+    result.style.color = "green";
+    WIN++;
+}
+else if(choice =='Rock' && comp == 'Paper'){
+    result.textContent = "YOU LOSE!"
+    result.style.color = "red";
+    LOSE++;
+}
+else if(choice =='Scissor' && comp == 'Paper'){
+    result.textContent = "YOU WIN!"
+    result.style.color = "green";
+    WIN++;
+}
+else if(choice =='Scissor' && comp == 'Rock'){
+    result.textContent = "YOU LOSE!"
+    result.style.color = "red";
+    LOSE++;
+}
+else if(choice =='Paper' && comp == 'Scissor'){
+    result.textContent = "YOU LOSE!"
+    result.style.color = "red";
+    LOSE++;
+}
+else if(choice =='Paper' && comp == 'Rock'){
+    result.textContent = "YOU WIN!"
+    result.style.color = "green";
+    WIN++;
+}
+else{
+    result.textContent = "ERROR🤕";
+}
+player.textContent = `PLAYER CHOICE: ${choice}`;
+computer.textContent = `COMPUTER CHOICE: ${comp}`
+choice = '';
+document.getElementById('player_win').textContent = `PLAYER: ${WIN}`
+document.getElementById('comp_win').textContent = `COMPUTER: ${LOSE}`
+}
+    </script>
+</body>
+</html>

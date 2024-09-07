@@ -1,0 +1,61 @@
+h1{
+    color: rgb(54, 54, 54);
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#section{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+#section div{
+    margin-left: 30px;
+    margin-right: 30px;
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 500px;
+    background-color: aqua;
+    transition: .2s;
+    cursor: pointer;
+    font-size: x-large;
+}
+#section div:hover{
+    background-color: rgb(0, 132, 255);
+}
+p{
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+#one{
+    color: green;
+}
+#two{
+    color: red;
+}
+#content{
+    max-width: 500px;
+    border: 1px solid;
+    background-color: rgb(238, 238, 238);
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px black;
+}
+body{
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#player_win{
+    color: green;
+}
+#comp_win{
+    color: red;
+}
+body{
+    font-family:monospace;
+}
+#result{
+    font-weight: bold;
+}
